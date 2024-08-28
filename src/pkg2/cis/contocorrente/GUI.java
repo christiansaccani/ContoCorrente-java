@@ -14,6 +14,20 @@ public class GUI extends javax.swing.JFrame {
     public GUI() {
         initComponents();
         banca = new Banca();
+        
+        txtNomeRsr.setVisible(false);
+        txtCognomeRsr.setVisible(false);
+        txtNumContoRsr.setVisible(false);
+        txtPosizioneRsr.setVisible(false);
+
+        lblNomeRsr.setVisible(false);
+        lblCognomeRsr.setVisible(false);
+        lblNumContoRsr.setVisible(false);
+        lblPosizioneRsr.setVisible(false);
+
+        btnModifica.setVisible(false);
+        btnRicerca.setVisible(false);
+
     }
 
     @SuppressWarnings("unchecked")
@@ -21,6 +35,11 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         dlgErrore = new javax.swing.JDialog();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jSplitPane1 = new javax.swing.JSplitPane();
+        jSplitPane2 = new javax.swing.JSplitPane();
         btnConferma = new javax.swing.JButton();
         lblNome = new javax.swing.JLabel();
         lblCognome = new javax.swing.JLabel();
@@ -39,6 +58,7 @@ public class GUI extends javax.swing.JFrame {
         txtPosizioneRsr = new javax.swing.JTextField();
         btnModifica = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
+        btnToggle = new javax.swing.JButton();
 
         javax.swing.GroupLayout dlgErroreLayout = new javax.swing.GroupLayout(dlgErrore.getContentPane());
         dlgErrore.getContentPane().setLayout(dlgErroreLayout);
@@ -51,7 +71,41 @@ public class GUI extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         btnConferma.setBackground(new java.awt.Color(0, 204, 51));
         btnConferma.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -62,12 +116,23 @@ public class GUI extends javax.swing.JFrame {
                 btnConfermaActionPerformed(evt);
             }
         });
+        getContentPane().add(btnConferma);
+        btnConferma.setBounds(380, 210, 72, 27);
 
+        lblNome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblNome.setText("Nome");
+        getContentPane().add(lblNome);
+        lblNome.setBounds(80, 90, 41, 20);
 
+        lblCognome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblCognome.setText("Cognome");
+        getContentPane().add(lblCognome);
+        lblCognome.setBounds(80, 130, 65, 20);
 
+        lblNumConto.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblNumConto.setText("Numero Conto");
+        getContentPane().add(lblNumConto);
+        lblNumConto.setBounds(80, 170, 120, 20);
 
         txtNome.setToolTipText("Nome");
         txtNome.addActionListener(new java.awt.event.ActionListener() {
@@ -75,10 +140,16 @@ public class GUI extends javax.swing.JFrame {
                 txtNomeActionPerformed(evt);
             }
         });
+        getContentPane().add(txtNome);
+        txtNome.setBounds(320, 90, 187, 22);
 
         txtCognome.setToolTipText("Cognome");
+        getContentPane().add(txtCognome);
+        txtCognome.setBounds(320, 130, 187, 22);
 
         txtNumConto.setToolTipText("Numero Conto");
+        getContentPane().add(txtNumConto);
+        txtNumConto.setBounds(320, 170, 187, 22);
 
         btnRicerca.setBackground(new java.awt.Color(51, 51, 255));
         btnRicerca.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -89,12 +160,23 @@ public class GUI extends javax.swing.JFrame {
                 btnRicercaActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRicerca);
+        btnRicerca.setBounds(830, 250, 80, 27);
 
+        lblNomeRsr.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblNomeRsr.setText("Nome");
+        getContentPane().add(lblNomeRsr);
+        lblNomeRsr.setBounds(530, 90, 41, 20);
 
+        lblCognomeRsr.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblCognomeRsr.setText("Cognome");
+        getContentPane().add(lblCognomeRsr);
+        lblCognomeRsr.setBounds(530, 130, 65, 20);
 
+        lblNumContoRsr.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblNumContoRsr.setText("Numero Conto");
+        getContentPane().add(lblNumContoRsr);
+        lblNumContoRsr.setBounds(530, 170, 110, 20);
 
         txtNomeRsr.setToolTipText("Nome");
         txtNomeRsr.addActionListener(new java.awt.event.ActionListener() {
@@ -102,8 +184,17 @@ public class GUI extends javax.swing.JFrame {
                 txtNomeRsrActionPerformed(evt);
             }
         });
+        getContentPane().add(txtNomeRsr);
+        txtNomeRsr.setBounds(720, 90, 187, 22);
 
         txtCognomeRsr.setToolTipText("Cognome");
+        txtCognomeRsr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCognomeRsrActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtCognomeRsr);
+        txtCognomeRsr.setBounds(720, 130, 187, 22);
 
         txtNumContoRsr.setToolTipText("Numero Conto");
         txtNumContoRsr.addActionListener(new java.awt.event.ActionListener() {
@@ -111,10 +202,17 @@ public class GUI extends javax.swing.JFrame {
                 txtNumContoRsrActionPerformed(evt);
             }
         });
+        getContentPane().add(txtNumContoRsr);
+        txtNumContoRsr.setBounds(720, 170, 187, 22);
 
+        lblPosizioneRsr.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblPosizioneRsr.setText("Posizione");
+        getContentPane().add(lblPosizioneRsr);
+        lblPosizioneRsr.setBounds(530, 210, 80, 20);
 
         txtPosizioneRsr.setToolTipText("Numero Conto");
+        getContentPane().add(txtPosizioneRsr);
+        txtPosizioneRsr.setBounds(720, 210, 187, 22);
 
         btnModifica.setBackground(new java.awt.Color(255, 204, 0));
         btnModifica.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -125,6 +223,8 @@ public class GUI extends javax.swing.JFrame {
                 btnModificaActionPerformed(evt);
             }
         });
+        getContentPane().add(btnModifica);
+        btnModifica.setBounds(720, 250, 90, 27);
 
         btnClear.setBackground(new java.awt.Color(153, 153, 153));
         btnClear.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -135,87 +235,27 @@ public class GUI extends javax.swing.JFrame {
                 btnClearActionPerformed(evt);
             }
         });
+        getContentPane().add(btnClear);
+        btnClear.setBounds(180, 30, 80, 27);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCognome)
-                            .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblNumConto)
-                            .addComponent(lblNomeRsr, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCognomeRsr)
-                            .addComponent(lblNumContoRsr)
-                            .addComponent(lblPosizioneRsr))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNumConto, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCognome, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNomeRsr, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCognomeRsr, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumContoRsr, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPosizioneRsr, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnConferma, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnModifica)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnClear, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnRicerca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(53, 53, 53))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNome))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCognome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCognome))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNumConto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNumConto))
-                .addGap(18, 18, 18)
-                .addComponent(btnConferma)
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNomeRsr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNomeRsr))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCognomeRsr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCognomeRsr))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNumContoRsr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNumContoRsr))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPosizioneRsr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPosizioneRsr))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRicerca)
-                    .addComponent(btnModifica))
-                .addGap(18, 18, 18)
-                .addComponent(btnClear)
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
+        btnToggle.setBackground(new java.awt.Color(255, 204, 0));
+        btnToggle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnToggle.setForeground(new java.awt.Color(51, 51, 51));
+        btnToggle.setText("Toggle");
+        btnToggle.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnToggle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnToggleActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnToggle);
+        btnToggle.setBounds(80, 30, 77, 27);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private boolean isCreaMode = true;
+    
     private void btnConfermaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfermaActionPerformed
         String nome = txtNome.getText();
         String cognome = txtCognome.getText();
@@ -312,7 +352,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNumContoRsrActionPerformed
 
     private void btnModificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificaActionPerformed
-        // Recupera i dati dalle text field di ricerca
+    // Recupera i dati dalle text field di ricerca
     String nomeRsr = txtNomeRsr.getText();
     String cognomeRsr = txtCognomeRsr.getText();
     String numContoStr = txtNumContoRsr.getText();
@@ -368,6 +408,47 @@ public class GUI extends javax.swing.JFrame {
         txtPosizioneRsr.setText("");
     }//GEN-LAST:event_btnClearActionPerformed
 
+    // ---------- FUNZIONI TOGGLE ----------//
+    
+    private void btnToggleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnToggleActionPerformed
+        // TODO add your handling code here:
+        switchMode(isCreaMode);
+        isCreaMode = !isCreaMode; // Inverte lo stato del toggle
+    }//GEN-LAST:event_btnToggleActionPerformed
+
+    private void txtCognomeRsrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCognomeRsrActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCognomeRsrActionPerformed
+
+    private void switchMode(boolean t) {
+        btnToggle.setText("Toggle");
+
+    // Mostra i campi e pulsanti relativi alla creazione
+    txtNome.setVisible(!t);
+    txtCognome.setVisible(!t);
+    txtNumConto.setVisible(!t);
+    
+    lblNome.setVisible(!t);
+    lblCognome.setVisible(!t);
+    lblNumConto.setVisible(!t);
+    
+    btnConferma.setVisible(!t);
+
+    // Nasconde i campi e pulsanti relativi alla ricerca
+    txtNomeRsr.setVisible(t);
+    txtCognomeRsr.setVisible(t);
+    txtNumContoRsr.setVisible(t);
+    txtPosizioneRsr.setVisible(t);
+    
+    lblNomeRsr.setVisible(t);
+    lblCognomeRsr.setVisible(t);
+    lblNumContoRsr.setVisible(t);
+    lblPosizioneRsr.setVisible(t);
+    
+    btnRicerca.setVisible(t);
+    btnModifica.setVisible(t);
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -408,7 +489,13 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton btnConferma;
     private javax.swing.JButton btnModifica;
     private javax.swing.JButton btnRicerca;
+    private javax.swing.JButton btnToggle;
     private javax.swing.JDialog dlgErrore;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JLabel lblCognome;
     private javax.swing.JLabel lblCognomeRsr;
     private javax.swing.JLabel lblNome;
